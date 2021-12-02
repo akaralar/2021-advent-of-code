@@ -18,6 +18,7 @@ final class Day2: Day {
     func part1(_ input: String) -> CustomStringConvertible {
         let commands: [(Command, Int)] = input.rows(lineDelimiter: "\n", interItemDelimiter: " ")
         var position: (horizontal: Int, vertical: Int) = (0, 0)
+        
         for (command, value) in commands {
             switch command {
             case .forward: position.horizontal += value
