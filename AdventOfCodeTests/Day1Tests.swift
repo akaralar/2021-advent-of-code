@@ -4,6 +4,7 @@
 //
 
 import XCTest
+@testable import AdventOfCode
 
 class Day1Tests: XCTestCase {
     let day = Day1()

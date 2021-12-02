@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import AOCToolbox
 
 final class Day1: Day {
     func countOfIncrease(_ items: [Int]) -> Int {
