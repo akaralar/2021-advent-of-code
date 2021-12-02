@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-i /Users/ahmet.karalar/Development/selfprojects/advent-of-code/advent-of-code-swift-template/AdventOfCode/Inputs/"
+            argument = "-i /Users/ahmet.karalar/Development/selfprojects/advent-of-code/2021/advent-of-code-swift-template/AdventOfCode/Inputs/"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
