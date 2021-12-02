@@ -7,13 +7,13 @@
 
 import Foundation
 
-extension Array {
-    subscript(safeAt index: Int) -> Element? {
+public extension Array {
+    public subscript(safeAt index: Int) -> Element? {
         guard index < endIndex else { return nil }
         return self[index]
     }
 
-    func slidingGroup(of length: Int) -> Array<Array<Element>> {
+    public func slidingGroup(of length: Int) -> Array<Array<Element>> {
         var groups: [[Element]] = []
         for (index, item) in zip(self.indices, self) {
             for i in 0 ..< length {
@@ -34,6 +34,6 @@ extension Array {
     }
 }
 
-extension Array where Element: Numeric {
+public extension Array where Element: Numeric {
     var sum: Element { reduce(0, +) }
 }

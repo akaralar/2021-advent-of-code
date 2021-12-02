@@ -89,10 +89,29 @@
 		73916D892758590B008625A2 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D882758590B008625A2 /* Collections */; };
 		73916D8B2758590B008625A2 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D8A2758590B008625A2 /* DequeModule */; };
 		73916D8D2758590B008625A2 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D8C2758590B008625A2 /* OrderedCollections */; };
-		73916D912758DBBA008625A2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D902758DBBA008625A2 /* Helpers.swift */; };
-		73916D942758DBE4008625A2 /* String+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D932758DBE4008625A2 /* String+Parsing.swift */; };
-		73916D962758DBFE008625A2 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D952758DBFE008625A2 /* Array+Helpers.swift */; };
+		73916DA327598703008625A2 /* AOCToolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 73916DA227598703008625A2 /* AOCToolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73916DA727598712008625A2 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D952758DBFE008625A2 /* Array+Helpers.swift */; };
+		73916DA827598712008625A2 /* String+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D932758DBE4008625A2 /* String+Parsing.swift */; };
+		73916DAA27598723008625A2 /* AOCToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73916DA027598703008625A2 /* AOCToolbox.framework */; };
+		73916DAB27598723008625A2 /* AOCToolbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73916DA027598703008625A2 /* AOCToolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73916D99275985A5008625A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39C3D06527556C2F00B2F989 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39C3D06C27556C2F00B2F989;
+			remoteInfo = AdventOfCode;
+		};
+		73916DAC27598723008625A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39C3D06527556C2F00B2F989 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73916D9F27598703008625A2;
+			remoteInfo = AOCToolbox;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		39C3D06B27556C2F00B2F989 /* CopyFiles */ = {
@@ -103,6 +122,17 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		73916DAE27598723008625A2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				73916DAB27598723008625A2 /* AOCToolbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -161,11 +191,12 @@
 		39C3D07C27556D7800B2F989 /* Day1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1.swift; sourceTree = "<group>"; };
 		39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C3D0B3275572E500B2F989 /* Day1Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day1Tests.swift; sourceTree = "<group>"; };
-		73916D8F27585ABC008625A2 /* day01_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = day01_input.txt; path = "/Users/ahmet.karalar/Development/selfprojects/advent-of-code/advent-of-code-swift-template/AdventOfCode/Inputs/day01_input.txt"; sourceTree = "<absolute>"; };
-		73916D902758DBBA008625A2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		73916D932758DBE4008625A2 /* String+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Parsing.swift"; sourceTree = "<group>"; };
 		73916D952758DBFE008625A2 /* Array+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
 		73916D972758F5C4008625A2 /* day02_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day02_input.txt; sourceTree = "<group>"; };
+		73916D9827597F1F008625A2 /* day01_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day01_input.txt; sourceTree = "<group>"; };
+		73916DA027598703008625A2 /* AOCToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AOCToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73916DA227598703008625A2 /* AOCToolbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOCToolbox.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,10 +208,18 @@
 				73916D862758587B008625A2 /* Algorithms in Frameworks */,
 				73916D8D2758590B008625A2 /* OrderedCollections in Frameworks */,
 				73916D8B2758590B008625A2 /* DequeModule in Frameworks */,
+				73916DAA27598723008625A2 /* AOCToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		39C3D0A9275572BC00B2F989 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73916D9D27598703008625A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,7 +234,9 @@
 			children = (
 				39C3D06F27556C2F00B2F989 /* AdventOfCode */,
 				39C3D0AD275572BC00B2F989 /* AdventOfCodeTests */,
+				73916DA127598703008625A2 /* AOCToolbox */,
 				39C3D06E27556C2F00B2F989 /* Products */,
+				73916DA927598723008625A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +245,7 @@
 			children = (
 				39C3D06D27556C2F00B2F989 /* AdventOfCode */,
 				39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */,
+				73916DA027598703008625A2 /* AOCToolbox.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,11 +253,9 @@
 		39C3D06F27556C2F00B2F989 /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
-				73916D922758DBC3008625A2 /* Helpers */,
 				73916D8E27585929008625A2 /* Inputs */,
 				39C3D07927556C5B00B2F989 /* Days */,
 				39C3D07027556C2F00B2F989 /* main.swift */,
-				73916D902758DBBA008625A2 /* Helpers.swift */,
 			);
 			path = AdventOfCode;
 			sourceTree = "<group>";
@@ -288,22 +328,41 @@
 		73916D8E27585929008625A2 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
+				73916D9827597F1F008625A2 /* day01_input.txt */,
 				73916D972758F5C4008625A2 /* day02_input.txt */,
-				73916D8F27585ABC008625A2 /* day01_input.txt */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
 		};
-		73916D922758DBC3008625A2 /* Helpers */ = {
+		73916DA127598703008625A2 /* AOCToolbox */ = {
 			isa = PBXGroup;
 			children = (
 				73916D932758DBE4008625A2 /* String+Parsing.swift */,
 				73916D952758DBFE008625A2 /* Array+Helpers.swift */,
+				73916DA227598703008625A2 /* AOCToolbox.h */,
 			);
-			path = Helpers;
+			path = AOCToolbox;
+			sourceTree = "<group>";
+		};
+		73916DA927598723008625A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		73916D9B27598703008625A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73916DA327598703008625A2 /* AOCToolbox.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		39C3D06C27556C2F00B2F989 /* AdventOfCode */ = {
@@ -313,10 +372,12 @@
 				39C3D06927556C2F00B2F989 /* Sources */,
 				39C3D06A27556C2F00B2F989 /* Frameworks */,
 				39C3D06B27556C2F00B2F989 /* CopyFiles */,
+				73916DAE27598723008625A2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				73916DAD27598723008625A2 /* PBXTargetDependency */,
 			);
 			name = AdventOfCode;
 			packageProductDependencies = (
@@ -340,11 +401,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				73916D9A275985A5008625A2 /* PBXTargetDependency */,
 			);
 			name = AdventOfCodeTests;
 			productName = AdventOfCodeTests;
 			productReference = 39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		73916D9F27598703008625A2 /* AOCToolbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73916DA427598703008625A2 /* Build configuration list for PBXNativeTarget "AOCToolbox" */;
+			buildPhases = (
+				73916D9B27598703008625A2 /* Headers */,
+				73916D9C27598703008625A2 /* Sources */,
+				73916D9D27598703008625A2 /* Frameworks */,
+				73916D9E27598703008625A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AOCToolbox;
+			productName = AOCToolbox;
+			productReference = 73916DA027598703008625A2 /* AOCToolbox.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -360,6 +440,9 @@
 						CreatedOnToolsVersion = 13.1;
 					};
 					39C3D0AB275572BC00B2F989 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					73916D9F27598703008625A2 = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
@@ -383,12 +466,20 @@
 			targets = (
 				39C3D06C27556C2F00B2F989 /* AdventOfCode */,
 				39C3D0AB275572BC00B2F989 /* AdventOfCodeTests */,
+				73916D9F27598703008625A2 /* AOCToolbox */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		39C3D0AA275572BC00B2F989 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73916D9E27598703008625A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -416,9 +507,7 @@
 				392785E22755B84800922454 /* Day21.swift in Sources */,
 				392785E72755B84800922454 /* Day9.swift in Sources */,
 				392785E12755B84800922454 /* Day18.swift in Sources */,
-				73916D942758DBE4008625A2 /* String+Parsing.swift in Sources */,
 				392785E82755B84800922454 /* Day24.swift in Sources */,
-				73916D912758DBBA008625A2 /* Helpers.swift in Sources */,
 				392785E92755B84800922454 /* Day6.swift in Sources */,
 				392785EA2755B84800922454 /* Day11.swift in Sources */,
 				392785DF2755B84800922454 /* Day10.swift in Sources */,
@@ -427,7 +516,6 @@
 				39C3D07127556C2F00B2F989 /* main.swift in Sources */,
 				392785D92755B84800922454 /* Day20.swift in Sources */,
 				392785D82755B84800922454 /* Day19.swift in Sources */,
-				73916D962758DBFE008625A2 /* Array+Helpers.swift in Sources */,
 				392785E52755B84800922454 /* Day8.swift in Sources */,
 				392785DE2755B84800922454 /* Day3.swift in Sources */,
 				392785D62755B84800922454 /* Day16.swift in Sources */,
@@ -493,7 +581,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73916D9C27598703008625A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73916DA727598712008625A2 /* Array+Helpers.swift in Sources */,
+				73916DA827598712008625A2 /* String+Parsing.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73916D9A275985A5008625A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39C3D06C27556C2F00B2F989 /* AdventOfCode */;
+			targetProxy = 73916D99275985A5008625A2 /* PBXContainerItemProxy */;
+		};
+		73916DAD27598723008625A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73916D9F27598703008625A2 /* AOCToolbox */;
+			targetProxy = 73916DAC27598723008625A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		39C3D07227556C2F00B2F989 /* Debug */ = {
@@ -671,6 +781,66 @@
 			};
 			name = Release;
 		};
+		73916DA527598703008625A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4ZYHKZZ358;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akaralar.AOCToolbox;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73916DA627598703008625A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4ZYHKZZ358;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akaralar.AOCToolbox;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -697,6 +867,15 @@
 			buildConfigurations = (
 				39C3D0B1275572BC00B2F989 /* Debug */,
 				39C3D0B2275572BC00B2F989 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73916DA427598703008625A2 /* Build configuration list for PBXNativeTarget "AOCToolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73916DA527598703008625A2 /* Debug */,
+				73916DA627598703008625A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
