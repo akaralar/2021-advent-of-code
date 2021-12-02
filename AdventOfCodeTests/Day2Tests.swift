@@ -4,6 +4,7 @@
 //
 
 import XCTest
+@testable import AdventOfCode
 
 class Day2Tests: XCTestCase {
     let day = Day2()
@@ -18,9 +19,9 @@ class Day2Tests: XCTestCase {
             up 3
             down 8
             forward 2
-            """,
+            """
+            ) as? Int,
             150
-            )
         )
     }
 
@@ -34,11 +35,9 @@ class Day2Tests: XCTestCase {
             up 3
             down 8
             forward 2
-            """,
-            150
-            )
+            """
+            ) as? Int,
+            900
         )
-
     }
-
 }
