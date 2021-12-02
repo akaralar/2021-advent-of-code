@@ -85,7 +85,13 @@
 		39C3D0B4275572E500B2F989 /* Day1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D0B3275572E500B2F989 /* Day1Tests.swift */; };
 		39C3D0B52755745900B2F989 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07C27556D7800B2F989 /* Day1.swift */; };
 		39C3D0B62755746500B2F989 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07A27556CA700B2F989 /* Day.swift */; };
-		39C3D0B92755752000B2F989 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 39C3D0B82755752000B2F989 /* Algorithms */; };
+		73916D862758587B008625A2 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D852758587B008625A2 /* Algorithms */; };
+		73916D892758590B008625A2 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D882758590B008625A2 /* Collections */; };
+		73916D8B2758590B008625A2 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D8A2758590B008625A2 /* DequeModule */; };
+		73916D8D2758590B008625A2 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D8C2758590B008625A2 /* OrderedCollections */; };
+		73916D912758DBBA008625A2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D902758DBBA008625A2 /* Helpers.swift */; };
+		73916D942758DBE4008625A2 /* String+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D932758DBE4008625A2 /* String+Parsing.swift */; };
+		73916D962758DBFE008625A2 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D952758DBFE008625A2 /* Array+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -155,6 +161,11 @@
 		39C3D07C27556D7800B2F989 /* Day1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1.swift; sourceTree = "<group>"; };
 		39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C3D0B3275572E500B2F989 /* Day1Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day1Tests.swift; sourceTree = "<group>"; };
+		73916D8F27585ABC008625A2 /* day01_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = day01_input.txt; path = "/Users/ahmet.karalar/Development/selfprojects/advent-of-code/advent-of-code-swift-template/AdventOfCode/Inputs/day01_input.txt"; sourceTree = "<absolute>"; };
+		73916D902758DBBA008625A2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		73916D932758DBE4008625A2 /* String+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Parsing.swift"; sourceTree = "<group>"; };
+		73916D952758DBFE008625A2 /* Array+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
+		73916D972758F5C4008625A2 /* day02_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day02_input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +173,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39C3D0B92755752000B2F989 /* Algorithms in Frameworks */,
+				73916D892758590B008625A2 /* Collections in Frameworks */,
+				73916D862758587B008625A2 /* Algorithms in Frameworks */,
+				73916D8D2758590B008625A2 /* OrderedCollections in Frameworks */,
+				73916D8B2758590B008625A2 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +211,11 @@
 		39C3D06F27556C2F00B2F989 /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
+				73916D922758DBC3008625A2 /* Helpers */,
+				73916D8E27585929008625A2 /* Inputs */,
 				39C3D07927556C5B00B2F989 /* Days */,
 				39C3D07027556C2F00B2F989 /* main.swift */,
+				73916D902758DBBA008625A2 /* Helpers.swift */,
 			);
 			path = AdventOfCode;
 			sourceTree = "<group>";
@@ -268,6 +285,24 @@
 			path = AdventOfCodeTests;
 			sourceTree = "<group>";
 		};
+		73916D8E27585929008625A2 /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				73916D972758F5C4008625A2 /* day02_input.txt */,
+				73916D8F27585ABC008625A2 /* day01_input.txt */,
+			);
+			path = Inputs;
+			sourceTree = "<group>";
+		};
+		73916D922758DBC3008625A2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				73916D932758DBE4008625A2 /* String+Parsing.swift */,
+				73916D952758DBFE008625A2 /* Array+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,7 +320,10 @@
 			);
 			name = AdventOfCode;
 			packageProductDependencies = (
-				39C3D0B82755752000B2F989 /* Algorithms */,
+				73916D852758587B008625A2 /* Algorithms */,
+				73916D882758590B008625A2 /* Collections */,
+				73916D8A2758590B008625A2 /* DequeModule */,
+				73916D8C2758590B008625A2 /* OrderedCollections */,
 			);
 			productName = AdventOfCode;
 			productReference = 39C3D06D27556C2F00B2F989 /* AdventOfCode */;
@@ -336,7 +374,8 @@
 			);
 			mainGroup = 39C3D06427556C2F00B2F989;
 			packageReferences = (
-				39C3D0B72755752000B2F989 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				73916D842758587B008625A2 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				73916D872758590B008625A2 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = 39C3D06E27556C2F00B2F989 /* Products */;
 			projectDirPath = "";
@@ -377,7 +416,9 @@
 				392785E22755B84800922454 /* Day21.swift in Sources */,
 				392785E72755B84800922454 /* Day9.swift in Sources */,
 				392785E12755B84800922454 /* Day18.swift in Sources */,
+				73916D942758DBE4008625A2 /* String+Parsing.swift in Sources */,
 				392785E82755B84800922454 /* Day24.swift in Sources */,
+				73916D912758DBBA008625A2 /* Helpers.swift in Sources */,
 				392785E92755B84800922454 /* Day6.swift in Sources */,
 				392785EA2755B84800922454 /* Day11.swift in Sources */,
 				392785DF2755B84800922454 /* Day10.swift in Sources */,
@@ -386,6 +427,7 @@
 				39C3D07127556C2F00B2F989 /* main.swift in Sources */,
 				392785D92755B84800922454 /* Day20.swift in Sources */,
 				392785D82755B84800922454 /* Day19.swift in Sources */,
+				73916D962758DBFE008625A2 /* Array+Helpers.swift in Sources */,
 				392785E52755B84800922454 /* Day8.swift in Sources */,
 				392785DE2755B84800922454 /* Day3.swift in Sources */,
 				392785D62755B84800922454 /* Day16.swift in Sources */,
@@ -505,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -560,7 +602,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -573,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -582,6 +625,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -660,9 +704,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		39C3D0B72755752000B2F989 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+		73916D842758587B008625A2 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		73916D872758590B008625A2 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -671,10 +723,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		39C3D0B82755752000B2F989 /* Algorithms */ = {
+		73916D852758587B008625A2 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 39C3D0B72755752000B2F989 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			package = 73916D842758587B008625A2 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		73916D882758590B008625A2 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73916D872758590B008625A2 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		73916D8A2758590B008625A2 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73916D872758590B008625A2 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		73916D8C2758590B008625A2 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73916D872758590B008625A2 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

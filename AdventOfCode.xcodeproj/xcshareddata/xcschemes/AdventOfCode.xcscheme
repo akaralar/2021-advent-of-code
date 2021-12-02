@@ -52,11 +52,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-i /path/to/inputs"
+            argument = "-i /Users/ahmet.karalar/Development/selfprojects/advent-of-code/advent-of-code-swift-template/AdventOfCode/Inputs/"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-d 1"
+            argument = "-d 2"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
