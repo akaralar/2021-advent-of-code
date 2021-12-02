@@ -13,10 +13,13 @@ func run(dayNumber: Int, inputPath: String) {
         return
     }
 
-    guard let input = try? String(
-        contentsOfFile: (inputPath as NSString).appendingPathComponent("day\(dayNumber)_input.txt")
-    )
-    else {
+    let inputFormatter = NumberFormatter()
+    inputFormatter.numberStyle = .none
+    inputFormatter.maximumFractionDigits = 0
+    inputFormatter.minimumIntegerDigits = 2
+    guard let daySuffix = inputFormatter.string(from: dayNumber as NSNumber) else { return }
+    let path = (inputPath as NSString).appendingPathComponent("day\(daySuffix)_input.txt")
+    guard let input = try? String(contentsOfFile: path) else {
         debugPrint("Could not read day\(dayNumber)_input.txt file")
         return
     }
