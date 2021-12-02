@@ -25,16 +25,24 @@ public extension String {
     var integers: [Int] { lines.compactMap(Int.init) }
 
     func rows(with delimiter: String = "\n") -> [String] {
-        let lines = components(separatedBy: delimiter)
-        return Array(lines.reversed().drop(while: \.isEmpty).reversed())
+        var lines = components(separatedBy: delimiter)
+        while lines.last?.isEmpty ?? false {
+            lines = lines.dropLast()
+        }
+        return lines
     }
 
     func rows<First: StringInitializable, Second: StringInitializable>(
         lineDelimiter: String = "\n",
         interItemDelimiter: String = " "
     ) -> [(First, Second)] {
-        rows(with: lineDelimiter)
-            .map { $0.components(separatedBy: interItemDelimiter) }
-            .map { ($0.first.flatMap(First.init)!, $0.last.flatMap(Second.init)!) }
+        var items: [(First, Second)] = []
+        
+        for row in rows(with: lineDelimiter) {
+            let rowItems = row.components(separatedBy: interItemDelimiter)
+            items.append((rowItems.first.flatMap(First.init)!, rowItems.last.flatMap(Second.init)!))
+        }
+
+        return items
     }
 }
