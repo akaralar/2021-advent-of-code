@@ -37,10 +37,9 @@ public extension String {
         interItemDelimiter: String = " "
     ) -> [(First, Second)] {
         var items: [(First, Second)] = []
-
         for row in rows(with: lineDelimiter) {
             let rowItems = row.components(separatedBy: interItemDelimiter)
-            items.append((First(rowItems.first!), Second(rowItems.last!))
+            items.append((rowItems.first.flatMap(First.init)!, rowItems.last.flatMap(Second.init)!))
         }
 
         return items
