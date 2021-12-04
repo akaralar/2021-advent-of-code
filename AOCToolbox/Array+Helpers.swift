@@ -8,12 +8,12 @@
 import Foundation
 
 public extension Array {
-    public subscript(safeAt index: Int) -> Element? {
+    subscript(safeAt index: Int) -> Element? {
         guard index < endIndex else { return nil }
         return self[index]
     }
 
-    public func slidingGroup(of length: Int) -> Array<Array<Element>> {
+    func slidingGroup(of length: Int) -> Array<Array<Element>> {
         var groups: [[Element]] = []
         for (index, item) in zip(self.indices, self) {
             for i in 0 ..< length {
