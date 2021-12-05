@@ -111,6 +111,28 @@ final class Day4: Day {
     }
 
     func part2(_ input: String) -> CustomStringConvertible {
+        let inputs = input.rows(with: "\n\n")
+        var (draws, boards) = (
+            inputs[0].rows(with: ",").compactMap(Int.init),
+            inputs[1...].map(Board.init(board:))
+        )
+
+        var lastBingoBoard: Board? = nil
+        for draw in draws {
+            boardLoop: for i in (0..<boards.count) {
+                var board = boards[i]
+                if board.hasBingo { continue boardLoop }
+                board.mark(draw)
+                boards[i] = board
+                if board.hasBingo { lastBingoBoard = board }
+            }
+
+            if boards.allSatisfy(\.hasBingo), let board = lastBingoBoard {
+                return board.sumOfUnmarked() * draw
+            }
+        }
+
         return 0
+
     }
 }
