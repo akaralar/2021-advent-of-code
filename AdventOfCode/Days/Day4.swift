@@ -33,7 +33,6 @@ struct Board {
                 return numbers.indexedDict()
             }
             .indexedDict()
-        print(self)
     }
 
     mutating func mark(_ value: Int) {
@@ -102,7 +101,6 @@ final class Day4: Day {
             }
 
             if let bingoBoard = boards.filter(\.hasBingo).first {
-                print(bingoBoard)
                 return bingoBoard.sumOfUnmarked() * draw
             }
         }
