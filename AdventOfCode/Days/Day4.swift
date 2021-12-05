@@ -15,33 +15,36 @@ struct Square {
     }
 }
 
+extension Square: StringInitializable {
+    init?(_ description: String) {
+        if let value = Int(description) {
+            self.value = value
+        } else {
+            return nil
+        }
+    }
+}
+
 extension Square: NumericExpressible {
     static var zero: Int { .zero }
     var numericValue: Int { value }
 }
 
 struct Board {
-    private(set) var rows: Dictionary<Int, Dictionary<Int, Square>>
+    private(set) var matrix: Matrix<Square>
     private(set) var hasBingo: Bool = false
 
     init(board: String) {
-        rows = board.lines
-            .map { line -> [Int: Square] in
-                let numbers = line.components(separatedBy: .whitespacesAndNewlines)
-                    .compactMap(Int.init)
-                    .map { Square.init(value: $0) }
-                return numbers.indexedDict()
-            }
-            .indexedDict()
+        matrix = Matrix(board, lineDelimiter: "\n", interItemDelimiter: .whitespacesAndNewlines)
     }
 
     mutating func mark(_ value: Int) {
-        for x in (0..<rows.count) {
-            for y in (0..<rows[x]!.count) {
-                guard var square = rows[x]?[y] else { continue }
+        for y in (0..<matrix.capacity.height) {
+            for x in (0..<matrix.capacity.width) {
+                guard var square = matrix[x, y] else { continue }
                 if square.isMarked { continue }
                 if square.value == value { square.mark() }
-                rows[x]?[y] = square
+                matrix[x, y] = square
             }
         }
 
@@ -49,39 +52,24 @@ struct Board {
     }
 
     private func checkRows() -> Bool {
-        rows.first { $0.value.allSatisfy(\.value.isMarked)} != nil
+        matrix.anyRowSatisfy(\.isMarked)
     }
 
     private func checkColumns() -> Bool {
-        for y in 0 ..< rows[0]!.count {
-            if rows.compactMap ({ $0.value[y] }).allSatisfy(\.isMarked) { return true }
-        }
-        return false
+        matrix.anyColumnSatisfy(\.isMarked)
     }
 
     func sumOfUnmarked() -> Int {
-        rows.map {
-            $0.value.reduce(0) { partialResult, indexAndRow in
-                if indexAndRow.value.isMarked { return partialResult }
-                return partialResult + indexAndRow.value.value
-            }
-        }.sum
+        matrix
+            .elements { !$0.isMarked }
+            .map(\.value)
+            .sum
     }
 }
 
 extension Board: CustomDebugStringConvertible {
     var debugDescription: String {
-        var description = ""
-        for y in 0 ..< rows.count {
-            for x in 0 ..< rows[0]!.count {
-                let square = rows[y]![x]!
-                let value = square.value
-                let string = value >= 10 ? " \(value)" : "  \(value)"
-                description = description + string
-            }
-            description = description + "\n"
-        }
-        return description
+        matrix.debugDescription
     }
 }
 
