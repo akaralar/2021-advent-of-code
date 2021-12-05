@@ -34,6 +34,30 @@ public extension Array {
     }
 }
 
-public extension Array where Element: Numeric {
-    var sum: Element { reduce(0, +) }
+public extension Array {
+    func indexedDict() -> [Int: Element] {
+        Dictionary(uniqueKeysWithValues: enumerated().map { index, item in (index, item) })
+    }
+}
+
+public protocol NumericExpressible {
+    associatedtype Value: Numeric
+    var numericValue: Value { get }
+    static var zero: Value { get }
+}
+
+extension Int: NumericExpressible {
+    public var numericValue: Self { self }
+
+}
+extension Double: NumericExpressible {
+    public var numericValue: Self { self }
+}
+
+public extension Array where Element: NumericExpressible {
+    var sum: Element.Value { reduce(.zero, { $0 + $1.numericValue }) }
+}
+
+public extension Dictionary where Value: NumericExpressible {
+    var sum: Value.Value { reduce(.zero, { $0 + $1.value.numericValue }) }
 }
