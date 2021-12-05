@@ -4,6 +4,8 @@
 //
 
 import Foundation
+import AOCToolbox
+
 struct Square {
     let value: Int
     private(set) var isMarked: Bool = false
@@ -86,6 +88,25 @@ extension Board: CustomDebugStringConvertible {
 
 final class Day4: Day {
     func part1(_ input: String) -> CustomStringConvertible {
+        let inputs = input.rows(with: "\n\n")
+        var (draws, boards) = (
+            inputs[0].rows(with: ",").compactMap(Int.init),
+            inputs[1...].map(Board.init(board:))
+        )
+
+        for draw in draws {
+            for i in (0..<boards.count) {
+                var board = boards[i]
+                board.mark(draw)
+                boards[i] = board
+            }
+
+            if let bingoBoard = boards.filter(\.hasBingo).first {
+                print(bingoBoard)
+                return bingoBoard.sumOfUnmarked() * draw
+            }
+        }
+
         return 0
     }
 
