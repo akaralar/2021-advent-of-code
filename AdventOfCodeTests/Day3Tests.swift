@@ -50,7 +50,5 @@ class Day3Tests: XCTestCase {
             ) as? Int,
             230
         )
-
     }
-
 }
