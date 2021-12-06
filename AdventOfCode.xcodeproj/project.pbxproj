@@ -86,6 +86,10 @@
 		39C3D0B52755745900B2F989 /* Day1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07C27556D7800B2F989 /* Day1.swift */; };
 		39C3D0B62755746500B2F989 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3D07A27556CA700B2F989 /* Day.swift */; };
 		733F1B32275D46ED00919457 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733F1B31275D46ED00919457 /* Matrix.swift */; };
+		733F1B35275D93F600919457 /* CountedSet in Frameworks */ = {isa = PBXBuildFile; productRef = 733F1B34275D93F600919457 /* CountedSet */; };
+		733F1B38275D945100919457 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = 733F1B37275D945100919457 /* ComplexModule */; };
+		733F1B3A275D945100919457 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = 733F1B39275D945100919457 /* Numerics */; };
+		733F1B3C275D945100919457 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = 733F1B3B275D945100919457 /* RealModule */; };
 		73916D862758587B008625A2 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D852758587B008625A2 /* Algorithms */; };
 		73916D892758590B008625A2 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D882758590B008625A2 /* Collections */; };
 		73916D8B2758590B008625A2 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D8A2758590B008625A2 /* DequeModule */; };
@@ -211,9 +215,13 @@
 			files = (
 				73916D892758590B008625A2 /* Collections in Frameworks */,
 				73916D862758587B008625A2 /* Algorithms in Frameworks */,
+				733F1B38275D945100919457 /* ComplexModule in Frameworks */,
 				73916D8D2758590B008625A2 /* OrderedCollections in Frameworks */,
 				73916D8B2758590B008625A2 /* DequeModule in Frameworks */,
+				733F1B35275D93F600919457 /* CountedSet in Frameworks */,
+				733F1B3A275D945100919457 /* Numerics in Frameworks */,
 				73916DAA27598723008625A2 /* AOCToolbox.framework in Frameworks */,
+				733F1B3C275D945100919457 /* RealModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +402,10 @@
 				73916D882758590B008625A2 /* Collections */,
 				73916D8A2758590B008625A2 /* DequeModule */,
 				73916D8C2758590B008625A2 /* OrderedCollections */,
+				733F1B34275D93F600919457 /* CountedSet */,
+				733F1B37275D945100919457 /* ComplexModule */,
+				733F1B39275D945100919457 /* Numerics */,
+				733F1B3B275D945100919457 /* RealModule */,
 			);
 			productName = AdventOfCode;
 			productReference = 39C3D06D27556C2F00B2F989 /* AdventOfCode */;
@@ -468,6 +480,8 @@
 			packageReferences = (
 				73916D842758587B008625A2 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				73916D872758590B008625A2 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				733F1B33275D93F500919457 /* XCRemoteSwiftPackageReference "CountedSet" */,
+				733F1B36275D945100919457 /* XCRemoteSwiftPackageReference "swift-numerics" */,
 			);
 			productRefGroup = 39C3D06E27556C2F00B2F989 /* Products */;
 			projectDirPath = "";
@@ -893,6 +907,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		733F1B33275D93F500919457 /* XCRemoteSwiftPackageReference "CountedSet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mickmaccallum/CountedSet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		733F1B36275D945100919457 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-numerics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		73916D842758587B008625A2 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
@@ -912,6 +942,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		733F1B34275D93F600919457 /* CountedSet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 733F1B33275D93F500919457 /* XCRemoteSwiftPackageReference "CountedSet" */;
+			productName = CountedSet;
+		};
+		733F1B37275D945100919457 /* ComplexModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 733F1B36275D945100919457 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = ComplexModule;
+		};
+		733F1B39275D945100919457 /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 733F1B36275D945100919457 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
+		733F1B3B275D945100919457 /* RealModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 733F1B36275D945100919457 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = RealModule;
+		};
 		73916D852758587B008625A2 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 73916D842758587B008625A2 /* XCRemoteSwiftPackageReference "swift-algorithms" */;

@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "CountedSet",
+        "repositoryURL": "https://github.com/mickmaccallum/CountedSet",
+        "state": {
+          "branch": null,
+          "revision": "5bdaf31e6f71dcb430e40a0da3ff10ff61bf5368",
+          "version": "2.0.1"
+        }
+      },
+      {
         "package": "swift-algorithms",
         "repositoryURL": "https://github.com/apple/swift-algorithms.git",
         "state": {
@@ -16,15 +25,6 @@
         "state": {
           "branch": null,
           "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
-          "version": "1.0.2"
-        }
-      },
-      {
-        "package": "swift-numerics",
-        "repositoryURL": "https://github.com/apple/swift-numerics",
-        "state": {
-          "branch": null,
-          "revision": "0a5bc04095a675662cf24757cc0640aa2204253b",
           "version": "1.0.2"
         }
       }
