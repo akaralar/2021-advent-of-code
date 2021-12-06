@@ -9,19 +9,19 @@ import CountedSet
 
 final class Day6: Day {
     private func calculate(input: String, for days: Int) -> CustomStringConvertible {
-        var birthdayCountsByDay = input.rows(with: ",")
+        var birthdayCountsByDay = input.byCommas
             .compactMap(Int.init)
-            .reduce(into: [Int: CountedSet<Bool>]()) { $0[$1 + 1, default: []].update(with: true) }
+            .reduce(into: Dictionary<Int, Int>()) { $0[$1 + 1, default: 0] += 1 }
 
         for day in 1 ... days {
             let newBirths = (0 ... day/7)
-                .map { birthdayCountsByDay[day - $0*7, default: []].count(for: true) }
+                .map { birthdayCountsByDay[day - $0*7, default: 0] }
                 .sum
 
-            birthdayCountsByDay[day + 9, default: []].update(with: true, count: newBirths)
+            birthdayCountsByDay[day + 9, default: 0] += newBirths
         }
 
-        return birthdayCountsByDay.map { $0.1.count(for: true) }.sum
+        return birthdayCountsByDay.map(\.value).sum
 
     }
 
