@@ -11,10 +11,6 @@ struct Point: Hashable {
     let y: Int
 }
 
-struct OceanFloor {
-    let matrix: Matrix<Int>
-}
-
 extension Point: StringInitializable {
     public init?(_ description: String) {
         let coordinates = description.components(separatedBy: ",")
