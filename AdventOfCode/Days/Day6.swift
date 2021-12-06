@@ -15,8 +15,7 @@ final class Day6: Day {
 
         for day in 1 ... days {
             let newBirths = (0 ... day/7)
-                .map { day - $0*7 }
-                .map { birthdayCountsByDay[$0, default: []].count(for: true) }
+                .map { birthdayCountsByDay[day - $0*7, default: []].count(for: true) }
                 .sum
 
             birthdayCountsByDay[day + 9, default: []].update(with: true, count: newBirths)
