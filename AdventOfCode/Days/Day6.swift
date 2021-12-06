@@ -31,6 +31,6 @@ final class Day6: Day {
     }
 
     func part2(_ input: String) -> CustomStringConvertible {
-        return 0
+        return calculate(input: input, for: 256)
     }
 }
