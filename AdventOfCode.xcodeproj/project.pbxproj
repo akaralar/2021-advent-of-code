@@ -90,6 +90,7 @@
 		733F1B38275D945100919457 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = 733F1B37275D945100919457 /* ComplexModule */; };
 		733F1B3A275D945100919457 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = 733F1B39275D945100919457 /* Numerics */; };
 		733F1B3C275D945100919457 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = 733F1B3B275D945100919457 /* RealModule */; };
+		733F1B3F275DFDF700919457 /* CountedSet in Frameworks */ = {isa = PBXBuildFile; productRef = 733F1B3E275DFDF700919457 /* CountedSet */; };
 		73916D862758587B008625A2 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D852758587B008625A2 /* Algorithms */; };
 		73916D892758590B008625A2 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D882758590B008625A2 /* Collections */; };
 		73916D8B2758590B008625A2 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 73916D8A2758590B008625A2 /* DequeModule */; };
@@ -198,6 +199,7 @@
 		39C3D0B3275572E500B2F989 /* Day1Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day1Tests.swift; sourceTree = "<group>"; };
 		733F1B30275D1F3300919457 /* day05_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day05_input.txt; sourceTree = "<group>"; };
 		733F1B31275D46ED00919457 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		733F1B3D275DDF0C00919457 /* day06_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day06_input.txt; sourceTree = "<group>"; };
 		73916D932758DBE4008625A2 /* String+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Parsing.swift"; sourceTree = "<group>"; };
 		73916D952758DBFE008625A2 /* Array+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
 		73916D972758F5C4008625A2 /* day02_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day02_input.txt; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733F1B3F275DFDF700919457 /* CountedSet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +344,7 @@
 		73916D8E27585929008625A2 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
+				733F1B3D275DDF0C00919457 /* day06_input.txt */,
 				733F1B30275D1F3300919457 /* day05_input.txt */,
 				73916DB0275B8935008625A2 /* day04_input.txt */,
 				73916DAF275AD77C008625A2 /* day03_input.txt */,
@@ -425,6 +429,9 @@
 				73916D9A275985A5008625A2 /* PBXTargetDependency */,
 			);
 			name = AdventOfCodeTests;
+			packageProductDependencies = (
+				733F1B3E275DFDF700919457 /* CountedSet */,
+			);
 			productName = AdventOfCodeTests;
 			productReference = 39C3D0AC275572BC00B2F989 /* AdventOfCodeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -961,6 +968,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 733F1B36275D945100919457 /* XCRemoteSwiftPackageReference "swift-numerics" */;
 			productName = RealModule;
+		};
+		733F1B3E275DFDF700919457 /* CountedSet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 733F1B33275D93F500919457 /* XCRemoteSwiftPackageReference "CountedSet" */;
+			productName = CountedSet;
 		};
 		73916D852758587B008625A2 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
