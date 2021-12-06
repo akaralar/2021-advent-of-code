@@ -26,6 +26,9 @@ public struct Matrix<Element: StringInitializable> {
             values[y]?[x] ?? value
         }
         set(newValue) {
+            if x > capacity.width { capacity = (x, capacity.height) }
+            if y > capacity.height { capacity = (capacity.width, y) }
+
             var yValue = values[y, default: [:]]
             yValue[x] = newValue
             values[y] = yValue
@@ -49,7 +52,7 @@ public struct Matrix<Element: StringInitializable> {
     }
 
     public func elements(_ predicate: (Element) -> Bool) -> [Element] {
-        values.map { $0.value.values.filter(predicate) }.flatMap { $0 }
+        values.flatMap { $0.value.values.filter(predicate) }
     }
 }
 
