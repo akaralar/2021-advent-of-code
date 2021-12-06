@@ -75,9 +75,9 @@ extension Board: CustomDebugStringConvertible {
 
 final class Day4: Day {
     func part1(_ input: String) -> CustomStringConvertible {
-        let inputs = input.rows(with: "\n\n")
+        let inputs = input.byDoubleNewlines
         var (draws, boards) = (
-            inputs[0].rows(with: ",").compactMap(Int.init),
+            inputs[0].byCommas.compactMap(Int.init),
             inputs[1...].map(Board.init(board:))
         )
 
@@ -97,9 +97,9 @@ final class Day4: Day {
     }
 
     func part2(_ input: String) -> CustomStringConvertible {
-        let inputs = input.rows(with: "\n\n")
+        let inputs = input.byDoubleNewlines
         var (draws, boards) = (
-            inputs[0].rows(with: ",").compactMap(Int.init),
+            inputs[0].byCommas.compactMap(Int.init),
             inputs[1...].map(Board.init(board:))
         )
 

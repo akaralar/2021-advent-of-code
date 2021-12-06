@@ -17,7 +17,7 @@ final class Day3: Day {
         return counts
     }
     func part1(_ input: String) -> CustomStringConvertible {
-        let values = input.lines
+        let values = input.byNewlines
 
         let counts = digitCountSets(for: values)
 
@@ -33,7 +33,7 @@ final class Day3: Day {
     }
 
     func part2(_ input: String) -> CustomStringConvertible {
-        let lines = input.lines
+        let lines = input.byNewlines
 
         var ogrLines = lines
         var cursor = ogrLines.first!.startIndex

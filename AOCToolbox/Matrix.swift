@@ -62,7 +62,7 @@ public extension Matrix {
     }
 
     init(_ string: String, lineDelimiter: String = "\n", interItemDelimiter: CharacterSet = .whitespacesAndNewlines) {
-        values = string.rows(with: lineDelimiter)
+        values = string.elements(with: lineDelimiter)
             .map { line -> [Int: Element] in
                 let numbers = line.components(separatedBy: interItemDelimiter)
                     .compactMap { Element.init($0) }

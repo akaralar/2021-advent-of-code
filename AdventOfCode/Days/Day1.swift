@@ -16,11 +16,11 @@ final class Day1: Day {
     }
 
     func part1(_ input: String) -> CustomStringConvertible {
-        return countOfIncrease(input.integers)
+        return countOfIncrease(input.byNewlines.integers)
     }
 
     func part2(_ input: String) -> CustomStringConvertible {
-        let window = input.integers.slidingGroup(of: 3)
+        let window = input.byNewlines.integers.slidingGroup(of: 3)
         return countOfIncrease(window.map(\.sum))
     }
 }
