@@ -20,7 +20,13 @@ class Day6Tests: XCTestCase {
     }
 
     func testPart2() throws {
-        debugPrint(day.part2(""))
+        XCTAssertEqual(
+            day.part2(
+                """
+                3,4,3,1,2
+                """
+            ) as? Int,
+            26984457539
+        )
     }
-
 }
