@@ -6,7 +6,7 @@
 import Foundation
 import AOCToolbox
 
-struct Point {
+struct Point: Hashable {
     let x: Int
     let y: Int
 }
@@ -21,27 +21,36 @@ extension Point: StringInitializable {
         x = Int(coordinates[0])!
         y = Int(coordinates[1])!
     }
+
+    func line(to point: Point) -> [Point] {
+        let xDiff = point.x - self.x
+        let yDiff = point.y - self.y
+        let unitVector = Point(
+            x: xDiff == 0 ? 0 : xDiff / abs(xDiff),
+            y: yDiff == 0 ? 0 : yDiff / abs(yDiff)
+        )
+
+        return (0 ... max(abs(xDiff), abs(yDiff)))
+            .map { i in
+                Point(x: self.x + (unitVector.x * i), y: self.y + (unitVector.y * i))
+            }
+    }
+}
+
+extension Point: CustomDebugStringConvertible {
+    var debugDescription: String {
+        "x: \(x), y: \(y)"
+    }
 }
 
 final class Day5: Day {
     func part1(_ input: String) -> CustomStringConvertible {
         let vents: [(Point, Point)] = input.rows(lineDelimiter: "\n", interItemDelimiter: " -> ")
         var floor = Matrix<Int>()
-
-        for vent in vents {
-            let (start, end) = vent
-            if start.x == end.x {
-                for y in min(start.y, end.y) ... max(start.y, end.y) {
-                    floor[start.x, y, default: 0] += 1
-                }
-            } else if start.y == end.y {
-                for x in min(start.x, end.x) ... max(start.x, end.x) {
-                    floor[x, start.y, default: 0] += 1
-                }
-            } else {
-                // skip for part 1
-            }
-        }
+        vents
+            .filter { $0.0.x == $0.1.x || $0.0.y == $0.1.y }
+            .flatMap { $0.0.line(to: $0.1) }
+            .forEach { floor[$0.x, $0.y, default: 0] += 1 }
 
         return floor.elements { $0 >= 2 }.count
     }
@@ -49,38 +58,9 @@ final class Day5: Day {
     func part2(_ input: String) -> CustomStringConvertible {
         let vents: [(Point, Point)] = input.rows(lineDelimiter: "\n", interItemDelimiter: " -> ")
         var floor = Matrix<Int>()
-
-        for vent in vents {
-            let (start, end) = vent
-            if start.x == end.x {
-                for y in min(start.y, end.y) ... max(start.y, end.y) {
-                    floor[start.x, y, default: 0] += 1
-                }
-            } else if start.y == end.y {
-                for x in min(start.x, end.x) ... max(start.x, end.x) {
-                    floor[x, start.y, default: 0] += 1
-                }
-            } else {
-                if (start.x > end.x && start.y > end.y) || (start.x < end.x && start.y < end.y) {
-                    let minX = min(start.x, end.x)
-                    let minY = min(start.y, end.y)
-                    for i in 0 ... abs(start.x - end.x) {
-                        let x = minX + i
-                        let y = minY + i
-                        floor[x, y, default: 0] += 1
-                    }
-                } else {
-                    let minX = min(start.x, end.x)
-                    let maxY = max(start.y, end.y)
-                    for i in 0 ... abs(start.x - end.x) {
-                        let x = minX + i
-                        let y = maxY - i
-                        floor[x, y, default: 0] += 1
-                    }
-
-                }
-            }
-        }
+        vents
+            .flatMap { $0.0.line(to: $0.1) }
+            .forEach { floor[$0.x, $0.y, default: 0] += 1 }
 
         return floor.elements { $0 >= 2 }.count
     }
