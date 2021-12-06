@@ -25,7 +25,8 @@ public extension String {
     var integers: [Int] { lines.compactMap(Int.init) }
 
     func rows(with delimiter: String = "\n") -> [String] {
-        var lines = components(separatedBy: delimiter)
+        var lines = trimmingCharacters(in: .whitespacesAndNewlines)
+            .components(separatedBy: delimiter)
         while lines.last?.isEmpty ?? false {
             lines = lines.dropLast()
         }
