@@ -19,6 +19,17 @@ final class Day7: Day {
     }
 
     func part2(_ input: String) -> CustomStringConvertible {
-        return 0
+        let crabs = input.byCommas.integers
+
+        var minFuel: Int = .max
+        for i in crabs.min()! ..< crabs.max()! {
+            let totalFuel = crabs
+                .map { abs($0 - i) }
+                .map { ($0 * ($0 + 1)) / 2 }
+                .sum
+            minFuel = min(totalFuel, minFuel)
+        }
+
+        return minFuel
     }
 }
