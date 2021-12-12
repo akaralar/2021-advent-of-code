@@ -9,8 +9,9 @@ import CountedSet
 
 final class Day6: Day {
     private func calculate(input: String, for days: Int) -> CustomStringConvertible {
-        var birthdayCountsByDay = input.byCommas
-            .compactMap(Int.init)
+        var birthdayCountsByDay = input
+            .byCommas
+            .integers
             .reduce(into: Dictionary<Int, Int>()) { $0[$1 + 1, default: 0] += 1 }
 
         for day in 1 ... days {
