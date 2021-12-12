@@ -20,7 +20,13 @@ class Day7Tests: XCTestCase {
     }
 
     func testPart2() throws {
-        debugPrint(day.part2(""))
+        XCTAssertEqual(
+            day.part2(
+                """
+                16,1,2,0,4,2,7,1,2,14
+                """
+            ) as? Int,
+            168
+        )
     }
-
 }
