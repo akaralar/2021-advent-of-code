@@ -209,6 +209,7 @@
 		73916DA227598703008625A2 /* AOCToolbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOCToolbox.h; sourceTree = "<group>"; };
 		73916DAF275AD77C008625A2 /* day03_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day03_input.txt; sourceTree = "<group>"; };
 		73916DB0275B8935008625A2 /* day04_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day04_input.txt; sourceTree = "<group>"; };
+		73B87B8E2766413C00D2CFC9 /* day08_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day08_input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +346,7 @@
 		73916D8E27585929008625A2 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
+				73B87B8E2766413C00D2CFC9 /* day08_input.txt */,
 				73650650275F919300EDA85D /* day07_input.txt */,
 				733F1B3D275DDF0C00919457 /* day06_input.txt */,
 				733F1B30275D1F3300919457 /* day05_input.txt */,
