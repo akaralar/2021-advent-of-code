@@ -27,6 +27,15 @@
           "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
           "version": "1.0.2"
         }
+      },
+      {
+        "package": "swift-numerics",
+        "repositoryURL": "https://github.com/apple/swift-numerics.git",
+        "state": {
+          "branch": null,
+          "revision": "0a5bc04095a675662cf24757cc0640aa2204253b",
+          "version": "1.0.2"
+        }
       }
     ]
   },
