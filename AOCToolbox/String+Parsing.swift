@@ -28,6 +28,8 @@ public extension String {
     var byNewlines: [String] { elements() }
     var byDoubleNewlines: [String] { elements(with: "\n\n") }
     var byCommas: [String] { elements(with: ",") }
+    var byPipes: [String] { elements(with: "|") }
+    var bySpaces: [String] { elements(with: " ") }
 
     internal func elements(with delimiter: String = "\n") -> [String] {
         var lines = trimmingCharacters(in: .whitespacesAndNewlines)
