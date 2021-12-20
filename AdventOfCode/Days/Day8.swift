@@ -38,10 +38,9 @@ final class Day8: Day {
          .    f  e    f  .    f  e    f  .    f
          .    f  e    f  .    f  e    f  .    f
           gggg    gggg    ....    gggg    gggg
-
         */
 
-        let numberLineMapping: [String: String] = [
+        let digitsBySegments: [String: String] = [
             "abcefg": "0",
             "cf": "1",
             "acdeg": "2",
@@ -63,7 +62,7 @@ final class Day8: Day {
                     .bySpaces
                     .map { numberString in
                         let key = String(numberString.map { mapping[$0]! }.sorted())
-                        return numberLineMapping[key]!
+                        return digitsBySegments[key]!
                     }
                     .joined()
 
@@ -74,7 +73,7 @@ final class Day8: Day {
 
     private func deduceMapping(_ allNumbers: String) -> [Character: Character] {
         /*
-         number of times each segment appears for numbers 0-9:
+         number of times each segment appears for digits 0-9:
          9 times: f
          8 times: a, c
          7 times: d, g
@@ -90,42 +89,41 @@ final class Day8: Day {
          2 segments = 1
 
          We can find out mapping for b, e and f easily because
-         number of times they appear in numbers 0-9 is unique.
+         number of times they appear in digits 0-9 is unique.
 
-         We can also find the numbers 1, 4 and 7 because number of
-         segments for them are unique.
+         We can also find exact mapping for digits 1, 4 and 7 because
+         number of segments for them are unique.
 
          To find a, we take the difference between 7 and 1.
          After finding a, we can easily find c because only these
-         two appear 8 times in numbers 0-9.
-
+         two segments appear 8 times in digits 0-9.
 
          To find d, we take the difference between 4 and 1, and subtract b.
          After finding d, we can easily find g because only these
-         two appear 7 times in numbers 0-9.
+         two segments appear 7 times in digits 0-9.
          */
 
-        let numberStrings = allNumbers.bySpaces.map(Set.init)
+        let digits = allNumbers.bySpaces.map(Set.init)
 
-        let one = numberStrings.filter { $0.count == 2}[0]
-        let four = numberStrings.filter { $0.count == 4 }[0]
-        let seven = numberStrings.filter { $0.count == 3 }[0]
+        let one = digits.filter { $0.count == 2}[0]
+        let four = digits.filter { $0.count == 4 }[0]
+        let seven = digits.filter { $0.count == 3 }[0]
 
-        let counts = CountedSet(numberStrings.flatMap { $0 })
-        let chars = Set("abcdefg")
+        let segmentCounts = CountedSet(digits.flatMap { $0 })
+        let allSegments = Set("abcdefg")
         var mapping: [Character: Character] = [:]
-        for char in chars where counts.count(for: char) == 6 {
-            mapping["b"] = char
+        for segment in allSegments where segmentCounts.count(for: segment) == 6 {
+            mapping["b"] = segment
         }
         mapping["a"] = seven.subtracting(one).first
         mapping["d"] = four.subtracting(one).subtracting([mapping["b"]!]).first
-        for char in chars where !mapping.values.contains(char) {
-            switch counts.count(for: char) {
-            case 9: mapping["f"] = char
-            case 6: mapping["b"] = char
-            case 4: mapping["e"] = char
-            case 8: mapping["c"] = char
-            case 7: mapping["g"] = char
+        for segment in allSegments where !mapping.values.contains(segment) {
+            switch segmentCounts.count(for: segment) {
+            case 9: mapping["f"] = segment
+            case 6: mapping["b"] = segment
+            case 4: mapping["e"] = segment
+            case 8: mapping["c"] = segment
+            case 7: mapping["g"] = segment
             default: break
             }
         }
