@@ -100,6 +100,7 @@
 		73916DA827598712008625A2 /* String+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73916D932758DBE4008625A2 /* String+Parsing.swift */; };
 		73916DAA27598723008625A2 /* AOCToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73916DA027598703008625A2 /* AOCToolbox.framework */; };
 		73916DAB27598723008625A2 /* AOCToolbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73916DA027598703008625A2 /* AOCToolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		73D9A2CB276FFFC50053E5C7 /* Dictionary+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D9A2CA276FFFC50053E5C7 /* Dictionary+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +211,7 @@
 		73916DAF275AD77C008625A2 /* day03_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day03_input.txt; sourceTree = "<group>"; };
 		73916DB0275B8935008625A2 /* day04_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day04_input.txt; sourceTree = "<group>"; };
 		73B87B8E2766413C00D2CFC9 /* day08_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = day08_input.txt; sourceTree = "<group>"; };
+		73D9A2CA276FFFC50053E5C7 /* Dictionary+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +367,7 @@
 				73916D952758DBFE008625A2 /* Array+Helpers.swift */,
 				73916DA227598703008625A2 /* AOCToolbox.h */,
 				733F1B31275D46ED00919457 /* Matrix.swift */,
+				73D9A2CA276FFFC50053E5C7 /* Dictionary+Helpers.swift */,
 			);
 			path = AOCToolbox;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				73916DA727598712008625A2 /* Array+Helpers.swift in Sources */,
 				73916DA827598712008625A2 /* String+Parsing.swift in Sources */,
 				733F1B32275D46ED00919457 /* Matrix.swift in Sources */,
+				73D9A2CB276FFFC50053E5C7 /* Dictionary+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
